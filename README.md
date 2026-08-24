@@ -43,8 +43,6 @@ python src/predict.py --sepal_length 5.1 --sepal_width 3.5 --petal_length 1.4 --
 Best model: **KNN** — saved to `models/best_model.pkl`.
 
 ## Key Insights
-
-## Key Insights
 - Petal length and petal width are the most discriminative features between species.
 - Setosa is linearly separable from the other two classes; versicolor and
   virginica overlap slightly.
