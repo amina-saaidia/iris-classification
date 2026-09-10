@@ -90,3 +90,7 @@ Iris_Classification/
 ├── README.md
 └── requirements.txt
 ```
+
+## Author
+
+Built as Task 3 of the EXPS Nexus Data Science Internship.
