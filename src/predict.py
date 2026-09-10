@@ -1,10 +1,19 @@
-"""Predict the species of a new iris sample using the saved model."""
+"""Predict the species of a new iris sample using the saved model pipeline."""
+import os
 import argparse
 import joblib
 import pandas as pd
 
-def predict(sepal_length, sepal_width, petal_length, petal_width):
-    model = joblib.load("models/best_model.pkl")
+# Dynamic path resolution to locate best_model.pkl robustly
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "models") if not os.path.basename(BASE_DIR) == "src" else os.path.join(BASE_DIR, "..", "models")
+MODEL_PATH = os.path.normpath(os.path.join(MODEL_DIR, "best_model.pkl"))
+
+def predict(sepal_length: float, sepal_width: float, petal_length: float, petal_width: float) -> str:
+    if not os.path.exists(MODEL_PATH):
+        raise FileNotFoundError(f"Model file not found at {MODEL_PATH}. Please run train.py first.")
+
+    model = joblib.load(MODEL_PATH)
     species_names = ["setosa", "versicolor", "virginica"]
 
     sample = pd.DataFrame([{
@@ -18,7 +27,7 @@ def predict(sepal_length, sepal_width, petal_length, petal_width):
     return species_names[pred]
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Iris Species Predictor")
     parser.add_argument("--sepal_length", type=float, required=True)
     parser.add_argument("--sepal_width", type=float, required=True)
     parser.add_argument("--petal_length", type=float, required=True)
