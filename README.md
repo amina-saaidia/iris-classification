@@ -93,4 +93,4 @@ Iris_Classification/
 
 ## Author
 
-Built as Task 3 of the EXPS Nexus Data Science Internship.
+Built as Task 1 of the EXPS Nexus Data Science Internship.
