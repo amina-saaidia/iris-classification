@@ -68,6 +68,7 @@ This project demonstrates a production-ready Machine Learning workflow: data pre
 
 ## Project Structure
 
+```text
 Iris_Classification/
 ├── .streamlit/
 │   └── config.toml
@@ -88,3 +89,4 @@ Iris_Classification/
 ├── app.py
 ├── README.md
 └── requirements.txt
+```
