@@ -160,6 +160,12 @@ EXPS_Iris_Flower_Classification/
   conventions, and shouldn't be assumed to generalize to other iris
   varieties or measurement setups.
 
+## Future Improvements
+- Replace the single train/test split with k-fold cross-validation for more robust metrics
+- Tune hyperparameters (e.g. KNN's K, Gradient Boosting's learning rate/depth) via grid search
+- Deeper error analysis — which specific cases each model gets wrong, and why
+- Evaluate on a held-out real-world sample beyond this benchmark dataset
+
 ## Author
 
 Built as Task 1 of the EXPS Nexus Data Science Internship (Algeria Pilot
